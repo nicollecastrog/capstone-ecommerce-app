@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Autocomplete} from 'react-materialize'
 
+//this component will allow the user to search through the entire product database by keyword
+//should be visible on everypage 
 
 
 class Search extends Component {

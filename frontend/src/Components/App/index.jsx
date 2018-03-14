@@ -26,10 +26,19 @@ import FeaturedItems from './FeaturedItems'
 
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      products: [],
+      cart: [],
+    }
+  }
   render() {
     return (
       <div className="App">
         <Nav/>
+        {/* <Header/> */}
         <Search/>
         <header className="App-header">
           <h1 className="App-title">Buy Better</h1>
