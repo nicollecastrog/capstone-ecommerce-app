@@ -1,0 +1,24 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../scss/main.scss",
+		"../scss/partials/_Cart.scss",
+		"../scss/partials/_FeaturedItems.scss",
+		"../scss/partials/_Nav.scss",
+		"../scss/partials/_ProductDetails.scss",
+		"../scss/partials/_ProductList.scss",
+		"../scss/partials/_Search.scss"
+	],
+	"sourcesContent": [
+		"$heading-color: tomato;\n\nh1 {\n    color: $heading-color;\n}\n\n$h3-font-color: brown;\n\nh3 {\n color: $h3-font-color;\n}\n\n\n\n\n@import './partials/Cart';\n@import './partials/FeaturedItems';\n@import './partials/Nav';\n@import './partials/ProductDetails';\n@import './partials/ProductList';\n@import './partials/Search';",
+		"",
+		"",
+		"footer.page-footer .footer-copyright {\n    padding: 0;\n    min-height:0;\n}\n\nfooter.page-footer {\n    margin-top:40%;\n}",
+		"",
+		"",
+		""
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,EAAE,CAAC;EACC,KAAK,EAHO,MAAM,GAIrB;;AAID,AAAA,EAAE,CAAC;EACF,KAAK,EAHU,KAAK,GAIpB;;AGVD,AAAmB,MAAb,AAAA,YAAY,CAAC,iBAAiB,CAAC;EACjC,OAAO,EAAE,CAAC;EACV,UAAU,EAAC,CAAC,GACf;;AAED,AAAA,MAAM,AAAA,YAAY,CAAC;EACf,UAAU,EAAC,GAAG,GACjB"
+}

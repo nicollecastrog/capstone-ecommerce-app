@@ -1,0 +1,21 @@
+$heading-color: tomato;
+
+h1 {
+    color: $heading-color;
+}
+
+$h3-font-color: brown;
+
+h3 {
+ color: $h3-font-color;
+}
+
+
+
+
+@import './partials/Cart';
+@import './partials/FeaturedItems';
+@import './partials/Nav';
+@import './partials/ProductDetails';
+@import './partials/ProductList';
+@import './partials/Search';
