@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Route, Switch } from 'react-router-dom'
 
 import Nav from './Nav'
+import Search from './Search'
+import FeaturedItems from './FeaturedItems'
 
 // Import all relevant components and style sheets. 
 // Create routes for all relevant components. 
@@ -27,11 +29,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
-
+        <Nav/>
+        <Search/>
         <header className="App-header">
           <h1 className="App-title">Buy Better</h1>
         </header>
+        <FeaturedItems/>
       </div>
     );
   }
