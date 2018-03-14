@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../../Assets/css/main.css';
 import axios from 'axios';
 import { Route, Switch } from 'react-router-dom'
-
 import Nav from './Nav'
 import Search from './Search'
 import FeaturedItems from './FeaturedItems'
@@ -32,8 +31,23 @@ class App extends Component {
     this.state = {
       products: [],
       cart: [],
+      FeaturedItems:[]
     }
   }
+
+  componentDidMount() {   //axios request to pull data from backend.Data is pulled in form of an array.
+    console.log("")
+
+    axios.get(`http://localhost:8080/getsongs`)
+      .then((response) => {
+        console.log(response.data)
+        this.setState({
+          songs: response.data
+        })
+      })
+  }
+
+
   render() {
     return (
       <div className="App">

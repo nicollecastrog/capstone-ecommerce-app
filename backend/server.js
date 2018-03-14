@@ -2,11 +2,9 @@ const express = require('express')
 const app = express()
 const port = process.argv[2] || 8080
 const bodyParser = require('body-parser')
-// const { OperationHelper } = require('apac');
 const amazon =require ('amazon-product-api')  //requireing amazon api library.
 const router = express.Router()
-//const util = require('util')
-var parseString = require('xml2js').parseString;
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -22,17 +20,22 @@ var client = amazon.createClient({
 
 //FEATURED ITEMS 
 
-client.itemSearch({
+app.get ('/featuredData/:category',(req, res)=>{
+    req.query.searchIndex
+    client.itemSearch({
     searchIndex: 'Grocery',
     responseGroup: 'ItemAttributes,Images',
     keywords:'fair trade, eco',
     sort:'salesrank',
+    IncludeReviewSummary:true,
     domain: 'webservices.amazon.ca'
 }).then(function (results) {
-    console.log(results);
+    res.json(results);
 }).catch(function (err) {
     console.log(err);
 });
+})
+
 
 
 app.listen(port, (req, res) => {
