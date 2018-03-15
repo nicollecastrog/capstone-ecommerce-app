@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import Nav from './Nav'
 import Search from './Search'
 import FeaturedItems from './FeaturedItems'
+import ProductList from './ProductList'
 
 // Import all relevant components and style sheets. 
 // Create routes for all relevant components. 
@@ -26,8 +27,8 @@ import FeaturedItems from './FeaturedItems'
 
 class App extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       products: [],
       cart: [],
@@ -35,29 +36,59 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {   //axios request to pull data from backend.Data is pulled in form of an array.
-    console.log("")
+  componentDidMount() {
 
-    axios.get(`http://localhost:8080/getsongs`)
+    axios.get(`http://localhost:8080/featuredData`)
       .then((response) => {
         console.log(response.data)
         this.setState({
-          songs: response.data
+          FeaturedItems: response.data
+        }) 
+      })
+      
+  }
+
+  componentWillMount() {
+
+    axios.get(`http://localhost:8080/products/baby`)
+      .then((response) => {
+        console.log(response.data)
+        this.setState({
+          products: response.data
         })
       })
   }
 
 
+
   render() {
+
     return (
       <div className="App">
         <Nav/>
-        {/* <Header/> */}
         <Search/>
         <header className="App-header">
           <h1 className="App-title">Buy Better</h1>
         </header>
-        <FeaturedItems/>
+        <FeaturedItems FeaturedItems={this.state.FeaturedItems} />
+
+        <Switch>
+          <Route exact path='/products/baby' render={() => {
+            return <ProductList
+               />
+          }
+          } />
+          <Route path='/products/beauty' render={() => {
+            return <ProductList />
+          }
+          } />
+          <Route path='/products/health' render={() => {
+            return <ProductList
+            />
+          }
+          } />
+        </Switch>
+
       </div>
     );
   }

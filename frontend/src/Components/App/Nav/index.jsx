@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Icon, SideNav, SideNavItem, Footer, Navbar, NavItem } from 'react-materialize'
+import { Icon, SideNav, SideNavItem, Footer, Navbar} from 'react-materialize'
+import { Link, } from "react-router-dom"
+
 
 //This component will allow the user to navigate the site.
 //a sidebar visible on desktop and hidden on hamburger menu on mobile. 
@@ -13,11 +15,10 @@ class Nav extends Component {
                 <Navbar >
                     <SideNav
                         trigger={<SideNavItem><Icon>menu</Icon></SideNavItem>}
-                        options={{ closeOnClick: true, draggable: true }}
-                    >
-                        <SideNavItem>About</SideNavItem>
-                        <SideNavItem>Products</SideNavItem>
-                        <SideNavItem>Third Link</SideNavItem>
+                        options={{ closeOnClick: true, draggable: true }}>
+                        <SideNavItem><Link to="/products/baby">Baby</Link></SideNavItem>
+                        <SideNavItem><Link to="/products/beauty">Beauty</Link></SideNavItem>
+                        <SideNavItem><Link to="/products/health">Health</Link></SideNavItem>
                         <Footer>
                             <h5 className="white-text">Contact</h5>
                             <ul>
