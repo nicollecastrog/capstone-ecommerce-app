@@ -1,3 +1,7 @@
+body {
+    height:100%;
+}
+
 $heading-color: tomato;
 
 h1 {
@@ -10,6 +14,39 @@ h3 {
  color: $h3-font-color;
 }
 
+
+  /* label color */
+   .input-field.col.s6 label {
+     color: blue;
+   }
+   /* label focus color */
+   .input-field.col.s6 input[type=text]:focus + label {
+     color: blue;
+   }
+   /* label underline focus color */
+   .input-field.col.s6 input[type=text]:focus {
+     border-bottom: 1px solid blue;
+     box-shadow: 0 1px 0 0 blue;
+   }
+   /* valid color */
+   .input-field.col.s6 input[type=text].valid {
+     border-bottom: 1px solid blue;
+     box-shadow: 0 1px 0 0 blue;
+   }
+   /* invalid color */
+   .input-field.col.s6 input[type=text].invalid {
+     border-bottom: 1px solid blue;
+     box-shadow: 0 1px 0 0 blue;
+   }
+   /* icon prefix focus color */
+   .input-field.col.s6 .prefix.active {
+     color: blue;
+   } 
+
+   .input-field.col.s6 label, input#timer{
+       font-size:1.5rem;
+   }
+  
 
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, SideNav, SideNavItem, Footer, Navbar} from 'react-materialize'
+import { Icon, SideNav, SideNavItem, Footer, Navbar, Button } from 'react-materialize'
 import { Link, } from "react-router-dom"
 
 
@@ -16,8 +16,13 @@ class Nav extends Component {
                     <SideNav
                         trigger={<SideNavItem><Icon>menu</Icon></SideNavItem>}
                         options={{ closeOnClick: true, draggable: true }}>
-                        <SideNavItem><Link to="/products/baby">Baby</Link></SideNavItem>
-                        <SideNavItem><Link to="/products/beauty">Beauty</Link></SideNavItem>
+                        <SideNavItem><Link to="/">Home</Link></SideNavItem>
+                        <SideNavItem><Link to="/products">Shop</Link></SideNavItem>
+                        <SideNavItem><Link to="/products/baby" onClick={() =>{this.props.searchCategory("baby")}}>
+                            Baby
+                        </Link>
+                        </SideNavItem>
+                        <SideNavItem><Link to="/products/beauty" onClick={() => { this.props.searchCategory("beauty") }}>Beauty</Link></SideNavItem>
                         <SideNavItem><Link to="/products/health">Health</Link></SideNavItem>
                         <Footer>
                             <h5 className="white-text">Contact</h5>
@@ -28,33 +33,17 @@ class Nav extends Component {
                             </ul>
                         </Footer>
                     </SideNav>
-                    <Icon>shopping_cart</Icon> 
+                    <Icon>shopping_cart</Icon>
                 </Navbar>
+
             </div>
         )
     }
 
 }
 
-// <Navbar >
-//     <SideNav className="fixed"
-//         trigger={<SideNavItem><Icon>menu</Icon></SideNavItem>}
-//         options={{ closeOnClick: true, draggable: true }}
-//     >
-//         <SideNavItem>About</SideNavItem>
-//         <SideNavItem>Products</SideNavItem>
-//         <SideNavItem>Third Link</SideNavItem>
-//         <Footer>
-//             <h5 className="white-text">Contact</h5>
-//             <ul>
-//                 <li>abc</li>
-//                 <li>123</li>
-//                 <li>abc</li>
-//             </ul>
-//         </Footer>
-//     </SideNav>
-//     <Icon>shopping_cart</Icon>
-// </Navbar>
+
+
 
 
 

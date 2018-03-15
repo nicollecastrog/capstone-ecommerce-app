@@ -44,51 +44,61 @@ class App extends Component {
         this.setState({
           FeaturedItems: response.data
         }) 
-      })
-      
+      }) 
   }
 
-  componentWillMount() {
 
-    axios.get(`http://localhost:8080/products/baby`)
+  searchCategory=(category) => {
+    //console.log('getting called!')
+    //console.log(category)
+    axios.get(`http://localhost:8080/products/${category}`)
       .then((response) => {
         console.log(response.data)
         this.setState({
           products: response.data
+          
         })
+        console.log(this.state.products)
+        //console.log('This is the data from category array')
+        console.log(response.data)
       })
   }
-
-
 
   render() {
 
     return (
       <div className="App">
-        <Nav/>
+        <Nav
+          searchCategory={this.searchCategory}/>
         <Search/>
         <header className="App-header">
           <h1 className="App-title">Buy Better</h1>
         </header>
-        <FeaturedItems FeaturedItems={this.state.FeaturedItems} />
-
         <Switch>
-          <Route exact path='/products/baby' render={() => {
+          <Route exact path='/' render={() => {
+            return <FeaturedItems
+              FeaturedItems={this.state.FeaturedItems} />
+          }
+          } />
+          <Route path='/products/baby' render={() => {
             return <ProductList
-               />
+              productList={this.state.products}
+            />
           }
           } />
           <Route path='/products/beauty' render={() => {
-            return <ProductList />
+            return <ProductList
+              productList={this.state.products} />
           }
           } />
           <Route path='/products/health' render={() => {
             return <ProductList
+              productList={this.state.products}
             />
           }
           } />
-        </Switch>
 
+        </Switch>
       </div>
     );
   }

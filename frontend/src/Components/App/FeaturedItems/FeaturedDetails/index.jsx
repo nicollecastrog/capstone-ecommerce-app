@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
-class ProductDetails extends Component {
+class FeaturedDetails extends Component {
 
     render() {
 
+        //let items = this.props.FeaturedItems
+        console.log(this.props.FeaturedItems)
+        //let item = this.props.FeaturedItems.item
 
-        let items = this.props.FeaturedItems
         return (
             <div>
-                <h2>Title: {item.ItemAttributes[0].Title}</h2>
+                {/* <h2>Title:{items.ItemAttributes[0].Title}</h2> */}
                 {/* <p className="description">{songs[song.songId].description}</p>
                 <button onClick={() => { this.props.playAudio([song.songId]) }}>{this.props.playing ? 'Pause' : 'Play'}</button> */}
             </div>
@@ -16,4 +18,4 @@ class ProductDetails extends Component {
     }
 }
 
-export default ProductDetails; 
+export default FeaturedDetails; 
