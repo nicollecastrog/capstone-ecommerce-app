@@ -49,7 +49,7 @@ app.get('/featuredData', (req, res) => {
 app.get('/products/:category', (req, res) => {
     const category = req.params.category
     let result = []
-
+    console.log(category)
     switch (category) {
         case 'baby':
             result =
@@ -57,7 +57,6 @@ app.get('/products/:category', (req, res) => {
                     searchIndex: 'Baby',
                     responseGroup: 'ItemAttributes,Images,OfferListings,Reviews',
                     keywords: 'fair trade, eco',
-                    sort: 'salesrank',
                     IncludeReviewSummary: true,
                     domain: 'webservices.amazon.ca'
                 }).then(function (results) {
@@ -72,7 +71,6 @@ app.get('/products/:category', (req, res) => {
                     searchIndex: 'Beauty',
                     responseGroup: 'ItemAttributes,Images,OfferListings,Reviews',
                     keywords: 'fair trade, eco',
-                    sort: 'salesrank',
                     IncludeReviewSummary: true,
                     domain: 'webservices.amazon.ca'
                 }).then(function (results) {
@@ -87,7 +85,6 @@ app.get('/products/:category', (req, res) => {
                     searchIndex: 'HealthPersonalCare',
                     responseGroup: 'ItemAttributes,Images,OfferListings,Reviews',
                     keywords: 'fair trade, eco',
-                    sort: 'salesrank',
                     IncludeReviewSummary: true,
                     domain: 'webservices.amazon.ca'
                 }).then(function (results) {
@@ -95,6 +92,49 @@ app.get('/products/:category', (req, res) => {
                 }).catch(function (err) {
                     console.log(err);
                 });
+            break
+        case 'grocery':
+            result =
+                client.itemSearch({
+                    searchIndex: 'Grocery',
+                    responseGroup: 'ItemAttributes,Images,OfferListings,Reviews',
+                    keywords: 'fair trade, eco',
+                    IncludeReviewSummary: true,
+                    domain: 'webservices.amazon.ca'
+                }).then(function (results) {
+                    res.json(results);
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            break
+        case 'kitchen':
+            result =
+                client.itemSearch({
+                    searchIndex: 'Kitchen',
+                    responseGroup: 'ItemAttributes,Images,OfferListings,Reviews',
+                    keywords: 'fair trade, eco',
+                    IncludeReviewSummary: true,
+                    domain: 'webservices.amazon.ca'
+                }).then(function (results) {
+                    res.json(results);
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            break
+        case 'pets':
+            result =
+                client.itemSearch({
+                    searchIndex: 'PetSupplies',
+                    responseGroup: 'ItemAttributes,Images,OfferListings,Reviews',
+                    keywords: 'fair trade, eco',
+                    IncludeReviewSummary: true,
+                    domain: 'webservices.amazon.ca'
+                }).then(function (results) {
+                    res.json(results);
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            break
     }
 })
 

@@ -37,3 +37,28 @@
 // }
 
 // export default Shop;
+
+
+{/* <Navbar >
+    <SideNav
+        trigger={<SideNavItem><Icon>menu</Icon></SideNavItem>}
+        options={{ closeOnClick: true, draggable: true }}>
+        <SideNavItem><Link to="/">Home</Link></SideNavItem>
+        <SideNavItem><Link to="/products">Shop</Link></SideNavItem>
+        <SideNavItem><Link to="/products/baby">Baby</Link></SideNavItem>
+        <SideNavItem><Link to="/products/beauty">Beauty</Link></SideNavItem>
+        <SideNavItem><Link to="/products/health">Health</Link></SideNavItem>
+        <SideNavItem><Link to="/products/grocery">Grocery</Link></SideNavItem>
+        <SideNavItem><Link to="/products/kitchen">Kitchen</Link></SideNavItem>
+        <SideNavItem><Link to="/products/pets">Pets</Link></SideNavItem>
+        <Footer>
+            <h5 className="white-text">Contact</h5>
+            <ul>
+                <li>abc</li>
+                <li>123</li>
+                <li>abc</li>
+            </ul>
+        </Footer>
+    </SideNav>
+    <Icon>shopping_cart</Icon>
+</Navbar>  */}

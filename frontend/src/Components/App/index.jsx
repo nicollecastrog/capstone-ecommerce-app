@@ -3,7 +3,7 @@ import '../../Assets/css/main.css';
 import axios from 'axios';
 import { Route, Switch } from 'react-router-dom'
 import Nav from './Nav'
-import Search from './Search'
+//import Search from './Search'
 import FeaturedItems from './FeaturedItems'
 import ProductList from './ProductList'
 
@@ -32,7 +32,7 @@ class App extends Component {
     this.state = {
       products: [],
       cart: [],
-      FeaturedItems:[]
+      FeaturedItems: []
     }
   }
 
@@ -43,24 +43,7 @@ class App extends Component {
         console.log(response.data)
         this.setState({
           FeaturedItems: response.data
-        }) 
-      }) 
-  }
-
-
-  searchCategory=(category) => {
-    //console.log('getting called!')
-    //console.log(category)
-    axios.get(`http://localhost:8080/products/${category}`)
-      .then((response) => {
-        console.log(response.data)
-        this.setState({
-          products: response.data
-          
         })
-        console.log(this.state.products)
-        //console.log('This is the data from category array')
-        console.log(response.data)
       })
   }
 
@@ -69,36 +52,31 @@ class App extends Component {
     return (
       <div className="App">
         <Nav
-          searchCategory={this.searchCategory}/>
-        <Search/>
+          searchCategory={this.searchCategory} />
+          <main>
+        {/* <Search /> */}
         <header className="App-header">
-          <h1 className="App-title">Buy Better</h1>
+            <img className="bbLogo responsive-img" alt="" src="../../../bb_logo.png"/>
         </header>
+        <section>
         <Switch>
           <Route exact path='/' render={() => {
             return <FeaturedItems
               FeaturedItems={this.state.FeaturedItems} />
           }
           } />
-          <Route path='/products/baby' render={() => {
+          <Route path='/products/:category' render={(props) => {
+            console.log(props.match.params.category)
             return <ProductList
               productList={this.state.products}
-            />
-          }
-          } />
-          <Route path='/products/beauty' render={() => {
-            return <ProductList
-              productList={this.state.products} />
-          }
-          } />
-          <Route path='/products/health' render={() => {
-            return <ProductList
-              productList={this.state.products}
+              {...props}
             />
           }
           } />
 
         </Switch>
+        </section>
+        </main>
       </div>
     );
   }

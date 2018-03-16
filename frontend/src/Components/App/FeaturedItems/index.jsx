@@ -18,7 +18,7 @@ class FeaturedItems extends Component {
                     <Card header={<CardTitle reveal image={item.LargeImage === undefined ? 'ok' : item.LargeImage[0].URL[0]} waves='light' />}
                         title={item.ItemAttributes[0].Title}
                         reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
-                        <h4>Price:{item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]}</h4>
+                        <h5>Price:{item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]}</h5>
                     </Card>
                 </Col>
             </div>)

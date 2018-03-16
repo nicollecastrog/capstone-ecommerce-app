@@ -21,7 +21,7 @@ class Search extends Component {
                                 'Google': 'http://placehold.it/250x250'
                             }
                         }
-                    />
+                    /> 
                 </Row>
             </div>
         )

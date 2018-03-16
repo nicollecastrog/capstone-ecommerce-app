@@ -1,51 +1,52 @@
+$body-font:'Open Sans', sans-serif;
+$body-fontSize: 1rem;
+
 body {
     height:100%;
+    background-color: #fcfcfc;
+    font-family: $body-font;
+    font-size: $body-fontSize;
 }
 
-$heading-color: tomato;
+$heading-color: #e75e62;
+$heading-font: 'Playfair Display', serif;
 
-h1 {
+h2, h3, h4 {
     color: $heading-color;
-}
-
-$h3-font-color: brown;
-
-h3 {
- color: $h3-font-color;
+    font-family: $heading-font;
+    margin-left:2rem;
 }
 
 
-  /* label color */
-   .input-field.col.s6 label {
-     color: blue;
-   }
-   /* label focus color */
-   .input-field.col.s6 input[type=text]:focus + label {
-     color: blue;
-   }
-   /* label underline focus color */
-   .input-field.col.s6 input[type=text]:focus {
-     border-bottom: 1px solid blue;
-     box-shadow: 0 1px 0 0 blue;
-   }
-   /* valid color */
-   .input-field.col.s6 input[type=text].valid {
-     border-bottom: 1px solid blue;
-     box-shadow: 0 1px 0 0 blue;
-   }
-   /* invalid color */
-   .input-field.col.s6 input[type=text].invalid {
-     border-bottom: 1px solid blue;
-     box-shadow: 0 1px 0 0 blue;
-   }
-   /* icon prefix focus color */
-   .input-field.col.s6 .prefix.active {
-     color: blue;
-   } 
+main {
+  padding-left: 300px;
+}
 
-   .input-field.col.s6 label, input#timer{
-       font-size:1.5rem;
-   }
+    @media only screen and (max-width : 992px) {
+      main {
+        padding-left: 0;
+      }
+    }
+
+  img.bbLogo{
+    width: 30%;
+    margin-left:2rem;
+  } 
+  
+  header.App-header {
+    background-color: #5a898f;
+    position:fixed;
+    z-index: 2;
+    top:0;
+    width:100%;
+  }
+
+  section {
+    padding-top:15%;
+  }
+
+
+
   
 
 

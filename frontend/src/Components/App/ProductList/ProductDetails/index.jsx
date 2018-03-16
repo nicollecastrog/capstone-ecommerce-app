@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 class ProductDetails extends Component {
 
     render() {
-
-
-        let items = this.props.FeaturedItems
+        console.log("details loaded")
+        console.log(this.props.products)
+        let products = this.props.products
+        console.log(this.props.match.params)
+        let item = this.props.match.params
+        console.log(products[0])
         return (
             <div>
-                <h2>Title: {item.ItemAttributes[0].Title}</h2>
-                {/* <p className="description">{songs[song.songId].description}</p>
-                <button onClick={() => { this.props.playAudio([song.songId]) }}>{this.props.playing ? 'Pause' : 'Play'}</button> */}
+                <h3>{products.item}</h3>
             </div>
         )
     }
