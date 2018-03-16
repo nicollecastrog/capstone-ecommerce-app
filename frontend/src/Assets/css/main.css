@@ -4,10 +4,13 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem; }
 
-h2, h3, h4 {
+h2, h3 {
   color: #e75e62;
   font-family: "Playfair Display", serif;
   margin-left: 2rem; }
+
+h4, h5 {
+  font-family: 'Oswald', sans-serif; }
 
 main {
   padding-left: 300px; }
@@ -44,6 +47,12 @@ section {
 
 .side-nav.fixed {
   background-color: #fcfcfc; }
+
+.side-nav a {
+  font-size: 18px; }
+
+input[type="text"] {
+  font-size: 1.5rem; }
 
 .masonry {
   margin: 1.5em 0;

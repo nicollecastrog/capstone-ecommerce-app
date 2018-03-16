@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { Icon, SideNav, SideNavItem, Autocomplete } from 'react-materialize'
+import { Icon, SideNav, SideNavItem} from 'react-materialize'
 import { Link, } from "react-router-dom"
 
-
-//This component will allow the user to navigate the site.
-//a sidebar visible on desktop and hidden on hamburger menu on mobile. 
-// Footer is displayed inside the navbar and holds contact information. 
 
 class Nav extends Component {
 
@@ -24,8 +20,6 @@ class Nav extends Component {
                     <SideNavItem><Link to="/products/pets">Pets</Link></SideNavItem>
                 </div>
             </SideNav>
-
-
         )
     }
 
