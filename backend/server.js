@@ -135,6 +135,8 @@ app.get('/products/:category', (req, res) => {
                     console.log(err);
                 });
             break
+            default:
+            console.log('Error, Page does not exist')
     }
 })
 

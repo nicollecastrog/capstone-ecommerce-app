@@ -5,12 +5,19 @@ import {Link } from 'react-router-dom'
 
 
 
+
+
 class ProductList extends Component {
+
+// componentWillMount () {
+//     this.props.refreshProducts(this.props.c)
+// }
 
     // shouldComponentUpdate (nextProps, nextState) {
     //     console.log(nextProps)
     //     console.log(nextState)
-    //     if (nextProps.productList !== null) {
+    //     console.log(nextProps.category, this.props.category)
+    //     if (nextProps.category !== this.props.category ) {
     //         return false
     //     } else {
     //         return true
@@ -19,10 +26,12 @@ class ProductList extends Component {
     // }
 
     render() {
-        console.log(this.props.productList)
+
+        //console.log(this.props.productList)
         let productsJSX = this.props.productList.map((item, i) => {
-            //console.log(item)
-            console.log(this.props.match.params)
+            // console.log(i)
+            // console.log(item)
+            //console.log(this.props.match.params)
             let work= this.props.match.params
             //console.log(category)
             return (<div key={i}>

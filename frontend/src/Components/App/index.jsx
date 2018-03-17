@@ -32,6 +32,7 @@ class App extends Component {
 
   refreshProducts = (category) => {
     console.log(category)
+    console.log(" asdfghjklqwertyuiozxcvbnm")
     axios.get(`http://localhost:8080/products/${category}`)
       .then((response) => {
         // console.log(response.data)
@@ -43,15 +44,11 @@ class App extends Component {
       })
   }
 
+
   // shouldComponentUpdate(nextProps, nextState) {
   //   console.log(nextProps)
   //   console.log(nextState)
-  //   if (nextProps) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-
+  //   return nextState.category === this.state.category
   // }
 
   render() {
@@ -71,7 +68,7 @@ class App extends Component {
                   FeaturedItems={this.state.FeaturedItems} />
               }
               } />
-              <Route path='/products/:category' render={(props) => {
+              <Route exact path='/products/:category' render={(props) => {
                 this.refreshProducts(props.match.params.category) //conditional rendering? isLoaded?
                 return <ProductList
                   category={this.state.category}
@@ -82,7 +79,8 @@ class App extends Component {
               } />
               {/* /products/${this.state.category}/${item.ASIN} */}
               <Route path='/products/:category/:productASIN' render={(props) => {
-                return console.log("gets here!"), <ProductDetails
+                console.log("gets here!") 
+                return <ProductDetails
                   products={this.state.productsArrJSX}
                   {...props} />
               }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Icon, SideNav, SideNavItem} from 'react-materialize'
 import { Link, } from "react-router-dom"
 
+//tell the api to search multiple categories (search indeces)
+//on component 
+//attach click to link and then take value of 'Baby' then get req of value 
 
 class Nav extends Component {
 
