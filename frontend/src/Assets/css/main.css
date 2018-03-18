@@ -5,7 +5,7 @@ body {
   font-size: 1.5rem; }
 
 h1, h2 {
-  color: #e75e62;
+  color: #5a898f;
   font-family: "Playfair Display", serif; }
 
 h3, h4, h5 {
@@ -30,13 +30,15 @@ header.App-header {
   width: 100%; }
 
 section {
-  padding-top: 15%; }
+  padding-top: 9%;
+  background: #a3e2ea;
+  bottom: 0; }
 
 .card-content {
   background: #fcfcfc; }
 
 .col.child {
-  background: #e9d227; }
+  background: #a3e2ea; }
 
 .searchBox {
   padding-top: 5%; }
@@ -57,7 +59,8 @@ input[type="text"] {
   margin: 1.5em 0;
   padding: 0;
   -moz-column-gap: 1.5em;
-  -webkit-column-gap: 1.5em; }
+  -webkit-column-gap: 1.5em;
+  margin-bottom: 0; }
 
 .child {
   /* Masonry bricks or child elements */
@@ -82,19 +85,25 @@ input[type="text"] {
     column-count: 3; } }
 
 .mainBox {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-column-gap: 10px; }
+  display: flex;
+  justify-content: space-between; }
+
+@media only screen and (max-width: 992px) {
+  .mainBox {
+    flex-direction: column; } }
+
+.priceBox {
+  margin: 0 5% 0 5%; }
 
 img.productImg {
   border: solid;
-  border-width: 5rem;
+  border-width: 2rem;
   border-color: #a3e2ea; }
 
 h2.itemTitle {
   padding-bottom: 2rem; }
 
 .itemDetails {
-  margin-left: 2rem; }
+  background: #e9d227; }
 
 /*# sourceMappingURL=main.css.map */

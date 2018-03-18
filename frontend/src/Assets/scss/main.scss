@@ -8,7 +8,7 @@ body {
     font-size: $body-fontSize;
 }
 
-$heading-color: #e75e62;
+$heading-color: #5a898f;
 $heading-font: 'Playfair Display', serif;
 
 h1, h2, {
@@ -46,7 +46,9 @@ main {
   }
 
   section {
-    padding-top:15%;
+    padding-top:9%;
+    background: #a3e2ea;
+    bottom:0;
   }
 
 

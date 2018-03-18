@@ -1,13 +1,24 @@
 .mainBox {
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr));
-    grid-column-gap: 10px;
-}
 
+    display: flex;
+    justify-content: space-between;
+    // display: grid;
+    // grid-template-columns: repeat( auto-fit, minmax(100px, 1fr));
+    // grid-column-gap: 10px;
+}
+    @media only screen and (max-width : 992px) {
+      .mainBox {
+        flex-direction: column;
+      }
+    }
+.priceBox {
+    margin: 0 5% 0 5%;
+}
 img.productImg {
     border: solid;
-    border-width: 5rem;
+    border-width: 2rem;
     border-color: #a3e2ea;
+
 }
 
 h2.itemTitle {
@@ -15,5 +26,6 @@ h2.itemTitle {
 }
 
 .itemDetails {
-    margin-left: 2rem;
+    // margin-left: 2rem;
+    background: #e9d227;
 }
