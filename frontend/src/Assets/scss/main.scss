@@ -19,7 +19,6 @@ h2, h3, {
 
 h4,h5, {
   font-family: 'Oswald', sans-serif;
-
 }
 
 
@@ -52,8 +51,6 @@ main {
 
 
 
-  
-
 
 
 @import './partials/Cart';
@@ -62,3 +59,4 @@ main {
 @import './partials/ProductDetails';
 @import './partials/ProductList';
 @import './partials/Search';
+@import './partials/DetailsPage';

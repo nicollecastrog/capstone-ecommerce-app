@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Route, Switch } from 'react-router-dom'
 import Nav from './Nav'
 import FeaturedItems from './FeaturedItems'
+import FeaturedDetails from './FeaturedDetails'
 import ProductList from './ProductList'
 import ProductDetails from './ProductDetails'
 
@@ -63,9 +64,18 @@ class App extends Component {
           </header>
           <section>
             <Switch>
-              <Route exact path='/' render={() => {
+              <Route exact path='/home' render={(props) => {
                 return <FeaturedItems
-                  FeaturedItems={this.state.FeaturedItems} />
+                  FeaturedItems={this.state.FeaturedItems} 
+                  {...props}
+                  />
+              }
+              } />
+              <Route exact path='/home/:featureASIN' render={(props) => {
+                return <FeaturedDetails
+                  FeaturedItems={this.state.FeaturedItems} 
+                  {...props}
+                  />
               }
               } />
               <Route exact path='/products/:category' render={(props) => {
@@ -81,7 +91,7 @@ class App extends Component {
               <Route path='/products/:category/:productASIN' render={(props) => {
                 console.log("gets here!") 
                 return <ProductDetails
-                  products={this.state.productsArrJSX}
+                  productList={this.state.products}
                   {...props} />
               }
               } />

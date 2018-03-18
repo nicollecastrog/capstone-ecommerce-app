@@ -32,12 +32,11 @@ class ProductList extends Component {
             // console.log(i)
             // console.log(item)
             //console.log(this.props.match.params)
-            let work= this.props.match.params
             //console.log(category)
             return (<div key={i}>
 
                 <Col className="child">
-                    <Card header={<CardTitle reveal image={item.LargeImage === undefined ? 'ok' : item.LargeImage[0].URL[0]} waves='light' />}
+                    <Card header={<CardTitle reveal image={item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0]} waves='light' />}
                         title={item.ItemAttributes[0].Title}
                         reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}
                     >

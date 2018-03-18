@@ -13,7 +13,7 @@ class Nav extends Component {
             <SideNav id="slide-out" className="side-nav fixed" trigger={<p> </p>}>
                 <SideNavItem className="searchBox"><Icon>search</Icon><input type="text" placeholder="Search" /></SideNavItem>
                 <div className="navLinks">
-                    <SideNavItem><Link to="/">Home</Link></SideNavItem>
+                    <SideNavItem><Link to="/home">Home</Link></SideNavItem>
                     <SideNavItem><Link to="/products">Shop</Link></SideNavItem>
                     <SideNavItem><Link to="/products/baby">Baby</Link></SideNavItem>
                     <SideNavItem><Link to="/products/beauty">Beauty</Link></SideNavItem>
