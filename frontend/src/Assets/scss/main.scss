@@ -1,5 +1,5 @@
 $body-font:'Open Sans', sans-serif;
-$body-fontSize: 1rem;
+$body-fontSize: 1.5rem;
 
 body {
     height:100%;
@@ -11,13 +11,13 @@ body {
 $heading-color: #e75e62;
 $heading-font: 'Playfair Display', serif;
 
-h2, h3, {
+h1, h2, {
     color: $heading-color;
     font-family: $heading-font;
-    margin-left:2rem;
 }
 
-h4,h5, {
+
+h3,h4,h5, {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -56,7 +56,6 @@ main {
 @import './partials/Cart';
 @import './partials/FeaturedItems';
 @import './partials/Nav';
-@import './partials/ProductDetails';
 @import './partials/ProductList';
 @import './partials/Search';
 @import './partials/DetailsPage';

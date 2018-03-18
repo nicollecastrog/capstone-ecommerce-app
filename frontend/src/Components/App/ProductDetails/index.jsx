@@ -19,12 +19,11 @@ class ProductDetails extends Component {
         return (
             <div>
                 <h3>{filterItem[0].ItemAttributes[0].Title}</h3>
-                <img alt="" src={
-                    image.ImageSet[0].HiResImage === undefined ? //ternary works for most images but not others, matcha and capsules.
-                    image.ImageSet[1].HiResImage[0].URL[0] :
-                    image.ImageSet[1] === undefined ?
+                <img alt="" src={filterItem[0].LargeImage === undefined ? //ternary works for most images but not others, ex.matcha and coffee capsules.
                     image.ImageSet[0].LargeImage[0].URL[0] :
-                    image.ImageSet[0].HiResImage[0].URL[0]} />
+                    filterItem[0].LargeImage[0].URL[0]
+                }
+                />
                 <h5>{filterItem[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]}</h5>
                 <h5>{filterItem[0].ItemAttributes[0].Feature[1]}</h5>
                 <h4>Other Products Your Might Like</h4>

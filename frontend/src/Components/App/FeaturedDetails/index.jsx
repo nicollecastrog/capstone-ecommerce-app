@@ -36,33 +36,28 @@ class FeaturedDetails extends Component {
         let image = filterItem[0].ImageSets[0] //assigning arrays to variable
     
         return (
-            <div>
-                <h3>{filterItem[0].ItemAttributes[0].Title}</h3>
+            <div className="itemDetails">
+                <h2 className = "itemTitle" >{filterItem[0].ItemAttributes[0].Title}</h2>
                 <div className= "mainBox">
                     <div className="imgBox">
-                    </div>    
-                
-                
+                        <img className="productImg" alt="" src={
+                        filterItem[0].LargeImage === undefined ? //ternary works for most images but not others, ex.matcha and coffee capsules.
+                        image.ImageSet[0].LargeImage[0].URL[0] :
+                        filterItem[0].LargeImage[0].URL[0]
+                        }
+                        />   
+                    </div> 
+                    <div className="priceBox">
+                        <h3>{filterItem[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]}</h3>
+                        <p className>{filterItem[0].ItemAttributes[0].Feature[1]}</p>
+                    </div> 
                 </div>
-
-
-
-               
-                <img alt="" src= {
-                    image.ImageSet[0].HiResImage === undefined ? //ternary works for most images but not others, ex.matcha and coffee capsules.
-                    image.ImageSet[1].HiResImage[0].URL[0] : 
-                    image.ImageSet[1] === undefined ? 
-                    image.ImageSet[0].LargeImage[0].URL[0] : 
-                    image.ImageSet[0].HiResImage[0].URL[0] } /> 
-                <h5>{filterItem[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0]}</h5>
-                <h5>{filterItem[0].ItemAttributes[0].Feature[1]}</h5>
                 <h4>Other Products Your Might Like</h4>
                 <div>
                     <Row>
                     {/* {othersJSX} APPEARS AS UNDEFINED */}
                     </Row>
                 </div>
-
             </div>
         )
     }

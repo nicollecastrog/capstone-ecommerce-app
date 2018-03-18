@@ -1,0 +1,19 @@
+.mainBox {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr));
+    grid-column-gap: 10px;
+}
+
+img.productImg {
+    border: solid;
+    border-width: 5rem;
+    border-color: #a3e2ea;
+}
+
+h2.itemTitle {
+    padding-bottom: 2rem;
+}
+
+.itemDetails {
+    margin-left: 2rem;
+}

@@ -2,14 +2,13 @@ body {
   height: 100%;
   background-color: #fcfcfc;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem; }
+  font-size: 1.5rem; }
 
-h2, h3 {
+h1, h2 {
   color: #e75e62;
-  font-family: "Playfair Display", serif;
-  margin-left: 2rem; }
+  font-family: "Playfair Display", serif; }
 
-h4, h5 {
+h3, h4, h5 {
   font-family: 'Oswald', sans-serif; }
 
 main {
@@ -81,5 +80,21 @@ input[type="text"] {
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3; } }
+
+.mainBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-column-gap: 10px; }
+
+img.productImg {
+  border: solid;
+  border-width: 5rem;
+  border-color: #a3e2ea; }
+
+h2.itemTitle {
+  padding-bottom: 2rem; }
+
+.itemDetails {
+  margin-left: 2rem; }
 
 /*# sourceMappingURL=main.css.map */
